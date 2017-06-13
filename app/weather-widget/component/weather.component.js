@@ -19,8 +19,7 @@ var WeatherComponent = (function () {
             _this.pos = position;
             _this.service.getCurrentWeather(_this.pos.coords.latitude, _this.pos.coords.longitude)
                 .subscribe(function (weather) { return console.log(weather); }, function (err) { return console.error(err); });
-        }),
-            function (err) { return console.error(err); };
+        }, function (err) { return console.error(err); });
     }
     WeatherComponent = __decorate([
         core_1.Component({

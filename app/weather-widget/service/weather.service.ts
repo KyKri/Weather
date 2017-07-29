@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FORECAST_KEY, FORECAST_ROOT } from '../constants/constants';
+import { FORECAST_KEY, FORECAST_ROOT, GEO_KEY, GEO_ROOT } from '../constants/constants';
 import { Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';

@@ -50,7 +50,7 @@ export class WeatherComponent implements OnInit {
         this.service.getLocationName(this.pos.coords.latitude, this.pos.coords.longitude)
             .subscribe(location => {
                 console.log(location); //TO-DO: Remove
-                this.currentLocation = location["results"][1]["formatted_address"];
+                this.currentLocation = location["results"][2]["formatted_address"];
                 console.log("Name: ", this.currentLocation); //TO-DO: Remove
             })
     }

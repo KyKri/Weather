@@ -54,4 +54,23 @@ export class WeatherComponent implements OnInit {
                 console.log("Name: ", this.currentLocation); //TO-DO: Remove
             })
     }
+
+    toggleUnits() {
+        this.toggleTempUnits();
+        this.toggleSpeedUnits();
+    }
+
+    toggleTempUnits() {
+        if (this.currentDegreeUnit == "fahrenheit")
+            this.currentDegreeUnit = "celsius";
+        else
+            this.currentDegreeUnit = "fahrenheit";
+    }
+
+    toggleSpeedUnits() {
+        if (this.currentSpeedUnit == "mph")
+            this.currentSpeedUnit = "kph";
+        else
+            this.currentSpeedUnit = "mph";
+    }
 }

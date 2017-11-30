@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../service/weather.service';
 import { Weather } from '../model/weather';
 
+declare var Skycons: any;
+
 @Component({
     moduleId: module.id,
     selector: 'weather-widget',
@@ -16,6 +18,7 @@ export class WeatherComponent implements OnInit {
     currentSpeedUnit = "mph";
     currentDegreeUnit = "fahrenheit";
     currentLocation = "";
+    icons = new Skycons({"color": "#FFF"});
 
     constructor(private service: WeatherService) { }
 
@@ -42,6 +45,7 @@ export class WeatherComponent implements OnInit {
                 this.weatherData.humidity = weather["currently"]["humidity"],
                 this.weatherData.icon = weather["currently"]["icon"]
                 console.log("weather: ", this.weatherData); //TO-DO: Remove this
+                this.setIcon();
             },
             err => console.error(err));
     }
@@ -72,5 +76,10 @@ export class WeatherComponent implements OnInit {
             this.currentSpeedUnit = "kph";
         else
             this.currentSpeedUnit = "mph";
+    }
+
+    setIcon() {
+        this.icons.add("icon", this.weatherData.icon);
+        this.icons.play();
     }
 }

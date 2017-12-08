@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { WeatherService } from '../service/weather.service';
 import { Weather } from '../model/weather';
+import { WEATHER_COLORS } from '../constants/constants';
 
 declare var Skycons: any;
 
@@ -18,7 +19,7 @@ export class WeatherComponent implements OnInit {
     currentSpeedUnit = "mph";
     currentDegreeUnit = "fahrenheit";
     currentLocation = "";
-    icons = new Skycons({"color": "#FFF"});
+    icons = new Skycons();
 
     constructor(private service: WeatherService) { }
 
@@ -81,5 +82,15 @@ export class WeatherComponent implements OnInit {
     setIcon() {
         this.icons.add("icon", this.weatherData.icon);
         this.icons.play();
+    }
+
+    setStyles(): Object {
+        if (this.weatherData.icon) {
+            this.icons.color = WEATHER_COLORS[this.weatherData.icon]["color"];
+            return WEATHER_COLORS[this.weatherData.icon];
+        } else {
+            this.icons.color = WEATHER_COLORS["default"]["color"];
+            return WEATHER_COLORS["default"];
+        }
     }
 }

@@ -53,7 +53,7 @@ var WeatherComponent = (function () {
         this.service.getLocationName(this.pos.coords.latitude, this.pos.coords.longitude)
             .subscribe(function (location) {
             console.log(location); //TO-DO: Remove
-            _this.currentLocation = location["results"][0]["address_components"][3]["long_name"];
+            _this.currentLocation = location["results"][2]["formatted_address"];
             console.log("Name: ", _this.currentLocation); //TO-DO: Remove
         });
     };

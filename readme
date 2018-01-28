@@ -1,0 +1,7 @@
+This is a demo app from the good folks at Devslopes for their TS and Angular 2 course.
+
+I built this over about 10 months trying to learn more about typescript, node.js and Angular.
+
+All in all a very fun app to write!
+
+A live demo has been deployed using Azure App Service, it can be found at https://krickdevweatherapp.azurewebsites.net/

@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     selector: 'my-app',
     template: `
         <div class="container">
-            <div id="responsive-problem-div" class="col-md-4">
+            <div class="col-md-4">
                 <weather-widget></weather-widget>
             </div>
         </div>
